@@ -1,11 +1,17 @@
 {
   "name": "das-pagination",
   "version": "0.1.0",
-  "private": true,
+  "description": "Pagination of lists",
+  "author": {
+    "name": "Emil Fenger"
+  },
+  "private": false,
+  "files": ["dist"],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:npm": "vue-cli-service build --target lib --name myComponent src/components/Pagination.vue"
   },
   "dependencies": {
     "core-js": "^3.3.2",

@@ -1,24 +1,33 @@
-# das-pagination
+# Das-Pagination
+
+Pagination of lists in vue
 
 ## Project setup
 ```
-npm install
+npm install das-pagination
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Add this to your data in your vue component
+````
+items: []
+````
+And this to your methods
+````
+getDataFromPagination (value) {
+  this.items = value
+}
+````
+Adding the component itself 
+````
+<pagination
+:per-page="12"
+:items="keysFiltered"
+v-on:paginate="getDataFromPagination"/>
+````
+Where items is the list that needs to be paginated, per-page is the amount of items per page
+and v-on:paginate is a function emitting the data back to the page.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Lastly go through this.items when looping through the items in the table
+````
+v-for="key in this.items"
+````
