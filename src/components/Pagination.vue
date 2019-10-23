@@ -1,5 +1,5 @@
 <template>
-    <div class="pages" align="center" v-if="pages.length > 1" :onload="emitToParent()">
+    <div align="center" v-if="pages.length > 1" :onload="emitToParent()">
         <p style="font-size: smaller; left: 50%">Page {{ page }} of {{ pages.length}}</p>
         <ul class="pagination">
             <li class="page-item">
@@ -71,7 +71,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .pagination {
     margin: 0 !important;
 }
