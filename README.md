@@ -31,3 +31,12 @@ Lastly go through this.items when looping through the items in the table
 ````
 v-for="key in this.items"
 ````
+
+There are problems with css in this module. To include the custom css included in the module it needs to be imported through a scss file. 
+````
+@import "~das-pagination/dist/myComponent.css";
+````
+The file containing this import also needs to be imported in your entry file `main.js`
+````
+import './assets/scss/importCSS.scss'
+````
