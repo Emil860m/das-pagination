@@ -1,7 +1,7 @@
 <template>
     <div align="center" v-if="pages.length > 1" :onload="emitToParent()">
         <p style="font-size: smaller; left: 50%">Page {{ page }} of {{ pages.length}}</p>
-        <ul class="pagination">
+        <ul class="wdb-pagination">
             <li class="page-item">
                 <button type="button" class="page-link" :disabled="page === 1" @click="previousPage()"> Previous </button>
             </li>
@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style>
-.pagination {
+.wdb-pagination {
     margin: 0 !important;
 }
 button.page-link {
