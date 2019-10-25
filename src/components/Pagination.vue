@@ -76,6 +76,7 @@ export default {
     margin: 0 !important;
     list-style: none;
     display: flex;
+    width: 70%;
 }
 button.page-button {
     background-color: #1b1b1b;
