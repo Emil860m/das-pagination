@@ -2,14 +2,14 @@
     <div align="center" v-if="pages.length > 1" :onload="emitToParent()">
         <p style="font-size: smaller; left: 50%">Page {{ page }} of {{ pages.length}}</p>
         <ul class="wdb-pagination">
-            <li class="page-item">
-                <button type="button" class="page-link" :disabled="page === 1" @click="previousPage()"> Previous </button>
+            <li>
+                <button type="button" class="page-button" :disabled="page === 1" @click="previousPage()"> Previous </button>
             </li>
-            <li class="page-item">
-                <button type="button" v-bind:key="pageNumber" class="page-link" v-for="pageNumber in pages" :disabled="page === pageNumber" @click="selectPage(pageNumber)"> {{pageNumber}} </button>
+            <li>
+                <button type="button" v-bind:key="pageNumber" class="page-button" v-for="pageNumber in pages" :disabled="page === pageNumber" @click="selectPage(pageNumber)"> {{pageNumber}} </button>
             </li>
-            <li class="page-item">
-                <button type="button" @click="nextPage()" :disabled="page === pages.length" class="page-link"> Next </button>
+            <li>
+                <button type="button" @click="nextPage()" :disabled="page === pages.length" class="page-button"> Next </button>
             </li>
         </ul>
     </div>
@@ -74,8 +74,10 @@ export default {
 <style>
 .wdb-pagination {
     margin: 0 !important;
+    list-style: none;
+    display: flex;
 }
-button.page-link {
+button.page-button {
     background-color: #1b1b1b;
     color: white;
     border-radius: 15px;
